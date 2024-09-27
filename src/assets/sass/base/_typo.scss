@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* * PAGES * */
+// Announce
+@mixin font-announce-title(){
+  font-size: clamp(18px, 2vw + 1rem, 36px);
+  color: $color-primary;
+  font-weight: 500;
+}
+@mixin font-announce-subtitle(){
+  font-size: 18px;
+  font-weight: 500;
+  color: #000;
+  @include media-inferior($breakpoints-s){
+    font-size: 14px;
+  }
+}
+@mixin font-announce-profile(){
+  font-size: 18px;
+  font-weight: 500;
+  color: $color-primary;
+  max-width: 120px;
+  text-align: end;
+  @include media-inferior($breakpoints-s){
+    font-size: 12px;
+  }
+}
+// 404
+@mixin font-404-title(){
+  font-size: 288px;
+  font-weight: 800;
+  color: $color-primary;
+  text-align: center;
+  line-height: 218px;
+  @include media-inferior($breakpoints-desktop){
+    font-size: 250px;
+    line-height: normal;
+  }
+  @include media-inferior($breakpoints-s){
+    font-size: 110px;
+  }
+}
+@mixin font-404-subtitle(){
+  font-size: 36px;
+  font-weight: 500;
+  color: $color-primary;
+  text-align: center;
+  padding-inline: 30px;
+  @include media-inferior($breakpoints-desktop){
+    font-size: 36px;
+  }
+  @include media-inferior($breakpoints-s){
+    font-size: 12px;
+    padding-inline: 60px;
+  }
+}
+@mixin font-404-link(){
+  font-size: 18px;
+  font-weight: 500;
+  color: black;
+  text-align: center;
+  text-decoration: underline;
+  @include media-inferior($breakpoints-desktop){
+    font-size: 18px;
+  }
+  @include media-inferior($breakpoints-s){
+    font-size: 12px;
+  }
+}
+// Homepage
+@mixin font-homepage-hero(){
+  font-size: clamp(24px, 2vw + 1rem, 48px);
+  color: white;
+  font-weight: 800;
+  text-align: center;
+  @include media-inferior($breakpoints-md){
+    text-align: left;
+    text-wrap: balance;
+  }
+}
+@mixin font-location-title(){
+  font-size: 18px;
+  color: white;
+  font-weight: 800;
+  @include media-inferior($breakpoints-md){
+    text-align: left;
+    text-wrap: balance;
+  }
+}
+/* * COMPONENTS * */
+
+@mixin font-tag(){
+  font-size: 14px;
+  color: white;
+  font-weight: 700;
+  @include media-inferior($breakpoints-s){
+    font-size: 10px;
+  }
+}
+
+@mixin font-header(){
+  color: black;
+  font-weight: 500;
+    font-size: 24px;
+  @include media-inferior($breakpoints-s){
+    font-size: 12px;
+  }
+  &_active{
+    text-decoration: underline;
+  }
+}

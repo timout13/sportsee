@@ -1,0 +1,142 @@
+.announceDetail {
+  &_infos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-block: 30px 50px;
+    gap: 20px;
+    &_right {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 20px;
+      @include media-inferior(836px){
+        margin-bottom: 5px;
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: space-between;
+      }
+      &_profile{
+        display: flex;
+        gap: 10px;
+        p{
+          align-self: center;
+          @include font-announce-profile();
+        }
+        img{
+          width: 64px;
+          height: 64px;
+          border-radius: 100%;
+        }
+      }
+      &_starsWp{
+        display: flex;
+        gap: 15px;
+        @include media-inferior($breakpoints-s){
+          gap: 5px;
+        }
+        .star{
+          @include media-inferior($breakpoints-s){
+            width: 15px;
+          }
+        }
+      }
+    }
+    &_left {
+      flex: 2;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-bottom: 20px;
+      @include media-inferior(836px){
+        margin-bottom: 5px;
+        min-width: 100%;
+      }
+      &_titles {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        &_title {
+          @include font-announce-title();
+        }
+        &_subtitle {
+          @include font-announce-subtitle();
+        }
+      }
+      &_tagWp{
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+    }
+    &_collapsesWp{
+      flex:100%;
+      display: flex;
+      gap: 60px;
+      @include media-inferior($breakpoints-md){
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+      .collapse{
+        flex: 1;
+        min-width: 302px;
+        @include media-inferior($breakpoints-s){
+          min-width: 100%;
+        }
+      }
+    }
+  }
+
+  &_carousel {
+    position: relative;
+    width: 100%;
+    margin-top: 50px;
+    &_btnWp {
+      position: absolute;
+      top: 50%;
+      z-index: 1;
+      width: calc(100% - 200px);
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+      @include media-inferior($breakpoints-desktop){
+        width: calc(100% - 100px);
+      }
+      @include media-inferior($breakpoints-s){
+        width: calc(100% - 40px);
+      }
+    }
+    &_currentImg{
+      color: white;
+      font-size: 18px;
+      font-weight: 600;
+      position: absolute;
+      bottom: 25px;
+      left: 50%;
+      z-index: 1;
+      transform: translateX(-50%);
+    }
+    &_imgWp {
+      display: flex;
+      width: 100%;
+      height: 400px;
+      overflow: hidden;
+      border-radius: 25px;
+      @include media-inferior($breakpoints-s){
+        height: 255px;
+      }
+      &_slider {
+        display: flex;
+        transition: transform ease-in-out 1s;
+
+        &_img {
+          height: auto;
+          object-fit: cover;
+          //min-width: 100%;
+          object-position: center;
+        }
+      }
+    }
+  }
+}

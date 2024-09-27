@@ -1,0 +1,20 @@
+.btn{
+  &_arrow{
+    background: 0;
+    border: 0;
+    height: 80px;
+    @include media-inferior($breakpoints-s){
+      height: 20px;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+    }
+    &--prev{
+      padding-inline: 20px 0;
+    }
+    &--next{
+      padding-inline: 0 20px;
+    }
+  }
+}

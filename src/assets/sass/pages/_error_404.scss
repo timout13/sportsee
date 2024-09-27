@@ -1,0 +1,20 @@
+.error_404{
+  margin-block: 139px;
+  display: flex;
+  flex-direction: column;
+  gap: 139px;
+  @include media-inferior($breakpoints-s){
+    margin-block: 113px;
+    gap: 113px;
+  }
+  &_title{
+    @include font-404-title();
+  }
+  &_subtitle{
+    @include font-404-subtitle();
+  }
+  &_link{
+    display: block;
+    @include font-404-link();
+  }
+}

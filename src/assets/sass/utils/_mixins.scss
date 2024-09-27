@@ -1,0 +1,15 @@
+@mixin media-betwteen($minWidth, $maxWidth) {
+  @media (min-width: $minWidth) and (max-width: $maxWidth) {
+    @content;
+  }
+}
+@mixin media-inferior($maxWidth) {
+  @media (max-width: $maxWidth) {
+    @content;
+  }
+}
+@mixin media-superior($minWidth) {
+  @media (min-width: $minWidth) {
+    @content;
+  }
+}

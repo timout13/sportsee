@@ -1,0 +1,11 @@
+.tag {
+  background-color: $color-primary;
+  padding: 3px 30px;
+  border-radius: 10px;
+  width: max-content;
+ @include font-tag();
+  cursor: default;
+  @include media-inferior($breakpoints-s){
+    padding: 3px 20px;
+  }
+}

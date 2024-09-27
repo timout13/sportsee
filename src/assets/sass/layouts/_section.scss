@@ -1,0 +1,11 @@
+.section{
+  &_py{
+    padding-inline: 100px;
+    @include media-inferior($breakpoints-desktop){
+      padding-inline: 50px;
+    }
+    @include media-inferior($breakpoints-s){
+      padding-inline: 20px;
+    }
+  }
+}
