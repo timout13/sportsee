@@ -1,6 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 :root {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Roboto", sans-serif;
   line-height: 1.5;
   font-weight: 400;
   width: 100vw;
@@ -18,9 +18,6 @@
 
 a {
   text-decoration: none;
-}
-a:visited {
-  color: black;
 }
 
 body {
@@ -46,24 +43,26 @@ main {
 /* * PAGES * */
 /* * COMPONENTS * */
 .header {
-  margin-top: 45px;
+  background: black;
   display: flex;
   width: 100%;
   justify-content: space-between;
+  height: 91px;
+  align-items: center;
+  padding-inline: 28px 91px;
+  gap: 150px;
+  box-shadow: 0px 5px 4px 0px hwb(0deg 0% 100%/25%);
 }
 .header_logo {
-  height: auto;
-}
-@media (max-width: 576px) {
-  .header_logo {
-    width: 125px;
-  }
+  height: 61px;
 }
 .header_linkswp {
   list-style: none;
   display: flex;
   gap: 30px;
   align-items: center;
+  flex: 1;
+  justify-content: space-between;
 }
 @media (max-width: 576px) {
   .header_linkswp {
@@ -71,29 +70,14 @@ main {
   }
 }
 .header_linkswp_item_link {
-  color: black;
+  color: #ffffff;
   font-weight: 500;
   font-size: 24px;
 }
-@media (max-width: 576px) {
-  .header_linkswp_item_link {
-    font-size: 12px;
-  }
-}
-.header_linkswp_item_link_active {
-  text-decoration: underline;
-}
 
-.footer {
-  background-color: black;
-  padding-block: 66px 29px;
+.sidebar {
+  background: black;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-}
-.footer p {
-  color: white;
 }
 
 .homepage {
