@@ -1,0 +1,30 @@
+.header {
+  background: black;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  height: 91px;
+  align-items: center;
+  padding-inline: 28px 91px;
+  gap: 150px;
+  box-shadow: 0px 5px 4px 0px hwb(0deg 0% 100% / 25%);
+  &_logo{
+    height: 61px;
+  }
+  &_linkswp{
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    flex: 1;
+    justify-content: space-between;
+    @include media-inferior($breakpoints-s){
+      gap: 20px;
+    }
+    &_item{
+      &_link{
+        @include font-header();
+      }
+    }
+  }
+}
