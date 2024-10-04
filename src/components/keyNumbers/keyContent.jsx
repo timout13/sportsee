@@ -6,8 +6,8 @@ import {useEffect, useState} from "react";
 function KeyContent({data}) {
     const [key, value] = data;
     const [tracker, setTracker] = useState(
-        { "label":"label",
-        "value": `${value} `,
+        { "label":"chargement du label",
+        "value": `chargement de la valeur `,
         "img":'/'}
     );
     useEffect(()=>{
@@ -33,7 +33,6 @@ function KeyContent({data}) {
                     "img":lipidImg})
                 break;
     }
-    console.log(data);
     },[data])
     return (
         <>
