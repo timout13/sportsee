@@ -1,3 +1,10 @@
-.dailyActivity{
+.dailyActivity {
   height: 200px;
+
+}
+.barChart-tooltip-wrapper{
+  .recharts-tooltip-item-list{
+    display: grid;
+    place-items: center;
+  }
 }

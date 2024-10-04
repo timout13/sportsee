@@ -10,10 +10,9 @@ function DailyActivity() {
     useEffect(() => {
         data && setUserData(data);
     }, [data]);
-        console.log(userData)
     return (
         <>
-            <div className="dailyActivity">
+            <div className="card dailyActivity">
                 <p className="dailyActivity-label">Activité quotidienne</p>
                 <DailyBarChart activity={userData} />
             </div>

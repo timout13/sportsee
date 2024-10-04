@@ -1,0 +1,12 @@
+.card{
+  background: $color-bg-component;
+  border-radius: 5px;
+  padding: 24px 30px;
+  flex: 1;
+  &--black{
+    background: $color-bg-black;
+  }
+  &--p-number{
+    padding: 32px;
+  }
+}

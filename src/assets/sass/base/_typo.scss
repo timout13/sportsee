@@ -1,30 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 /* * PAGES * */
-// Announce
-@mixin font-announce-title(){
-  font-size: clamp(18px, 2vw + 1rem, 36px);
-  color: $color-primary;
-  font-weight: 500;
-}
-@mixin font-announce-subtitle(){
-  font-size: 18px;
-  font-weight: 500;
-  color: #000;
-  @include media-inferior($breakpoints-s){
-    font-size: 14px;
-  }
-}
-@mixin font-announce-profile(){
-  font-size: 18px;
-  font-weight: 500;
-  color: $color-primary;
-  max-width: 120px;
-  text-align: end;
-  @include media-inferior($breakpoints-s){
-    font-size: 12px;
-  }
-}
 // 404
 @mixin font-404-title(){
   font-size: 288px;
@@ -102,4 +78,16 @@
   color: #ffffff;
   font-weight: 500;
   font-size: 24px;
+}
+
+@mixin font-key-tracker-label(){
+  color: $color-bg-black;
+  font-weight: 800;
+  font-size: 20px;
+}
+
+@mixin font-key-tracker-value(){
+  color: #74798C;
+  font-weight: 500;
+  font-size: 14px;
 }

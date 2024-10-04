@@ -16,20 +16,44 @@ export default function DailyBarChart({activity}) {
     function getXAxisDays() {
         return [1, 2, 3, 4, 5, 6, 7];
     }
+    const wrapperStyle = {
+        background: '#E60000',
+        width:"39px",
+        height:"63px",
+        padding:"4px",
+        display: "grid",
+        justifyContent:"space-between",
+        alignContent: "stretch",
+
+    };
     const itemStyle = {
-        background: 'black',
         color:"white",
-        fontSize:"24px"
+        fontSize:"7px",
+        padding: "0px",
+        border:0,
+        background: "transparent"
     };
     const contentStyle = {
-        background: '#E60000',
+        padding: "0px",
+        border:0,
+        background: "transparent",
+        height: "100%"
     };
     const labelStyle = {
         display: 'none',
     };
+
+    const legendWrapperStyle ={
+        fontSize: "14px",
+        background:"purple"
+    }
     const formatTooltip = (value, name)=> {
         const unit = name=="calories" ? "Kcal":"kg";
         return [`${value} ${unit}`];
+    }
+    const formatLegend = (value, entry, index) => {
+         const legend = value == "calories" ? "Calories brûlées (kCal)" : "Poids (kg)";
+        return legend;
     }
     return (
         <ResponsiveContainer width="100%" height="100%">
@@ -39,8 +63,8 @@ export default function DailyBarChart({activity}) {
                 data={activity.sessions}
                 margin={{
                     top: 5,
-                    right: 30,
-                    left: 20,
+                    right: 0,
+                    left: 0,
                     bottom: 5,
                 }}
                 barCategoryGap={'number'}
@@ -51,8 +75,8 @@ export default function DailyBarChart({activity}) {
                 <YAxis yAxisId="kilogram" dataKey={'kilogram'} orientation={'right'} type="number"
                        domain={['dataMin - 3', 'dataMax + 3']}/>
                 <YAxis dataKey={'calories'} hide={true}/>
-                <Tooltip label={false} formatter={(value, name, props) => formatTooltip(value,name)} itemStyle={itemStyle} contentStyle={contentStyle} labelStyle={labelStyle}/>
-                <Legend align={'right'} verticalAlign={'top'} iconType={'circle'}/>
+                <Tooltip label={false} formatter={(value, name, props) => formatTooltip(value,name)} wrapperClassName={"barchart-tooltip-wrapper"} wrapperStyle={wrapperStyle}  itemStyle={itemStyle} contentStyle={contentStyle} labelStyle={labelStyle}/>
+                <Legend wrapperStyle={legendWrapperStyle} formatter={formatLegend} align={'right'} verticalAlign={'top'} iconType={'circle'}/>
                 <Bar dataKey="kilogram" radius={[3, 3, 0, 0]} barSize={7} fill="#282D30"
                      activeBar={<Rectangle/>} yAxisId="kilogram"/>
                 <LabelList dataKey="kilogram" position="top"/>
