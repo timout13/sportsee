@@ -270,6 +270,10 @@ main {
   padding-inline: 0 20px;
 }
 
+.dailyActivity {
+  height: 200px;
+}
+
 .section_py {
   padding-inline: 100px;
 }
