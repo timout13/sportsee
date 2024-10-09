@@ -1,0 +1,19 @@
+.session {
+  max-height: 263px;
+  grid-area: linechart;
+  padding-inline: 0;
+  background: #FF0000;
+  padding-block: 30px 16px;
+  min-height: 258px;
+  position: relative;
+  &-label{
+    position: absolute;
+    width: 147px;
+    color: rgb(255 255 255 / 50%);
+    font-weight: 600;
+    font-size: 15px;
+    top: 30px;
+    left: 30px;
+    z-index: 2;
+  }
+}

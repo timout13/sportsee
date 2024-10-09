@@ -103,13 +103,15 @@ main {
   flex: 1;
 }
 .homepage-content {
-  display: flex;
+  display: grid;
   gap: 30px;
+  grid-template-areas: "barchart barchart barchart tracker" "barchart barchart barchart tracker" "linechart . . tracker";
 }
 .homepage .keyNumbers {
   display: flex;
   flex-direction: column;
   gap: 39px;
+  grid-area: tracker;
 }
 .homepage .keyNumbers-key {
   display: flex;
@@ -228,11 +230,32 @@ main {
 
 .dailyActivity {
   height: 200px;
+  grid-area: barchart;
 }
 
 .barChart-tooltip-wrapper .recharts-tooltip-item-list {
   display: grid;
   place-items: center;
+}
+
+.session {
+  max-height: 263px;
+  grid-area: linechart;
+  padding-inline: 0;
+  background: #FF0000;
+  padding-block: 30px 16px;
+  min-height: 258px;
+  position: relative;
+}
+.session-label {
+  position: absolute;
+  width: 147px;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 600;
+  font-size: 15px;
+  top: 30px;
+  left: 30px;
+  z-index: 2;
 }
 
 .section_py {

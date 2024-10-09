@@ -2,13 +2,18 @@
   margin-block: 50px;
   flex: 1;
   &-content{
-    display: flex;
+    display: grid;
     gap: 30px;
+    grid-template-areas:
+        "barchart barchart barchart tracker"
+        "barchart barchart barchart tracker"
+        "linechart . . tracker";
   }
   .keyNumbers{
     display: flex;
     flex-direction: column;
     gap: 39px;
+    grid-area: tracker;
     &-key{
       display: flex;
       gap: 30px;
