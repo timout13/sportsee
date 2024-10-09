@@ -77,7 +77,7 @@ export default function SessionLineChart({userSessions}) {
 
                     data={data}
                     margin={{
-                        top: 5,
+                        top: 30,
                         right: 0,
                         left: 0,
                         bottom: 5,

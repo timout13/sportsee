@@ -229,13 +229,34 @@ main {
 }
 
 .dailyActivity {
-  height: 200px;
+  height: 320px;
   grid-area: barchart;
+  display: flex;
+  flex-direction: column;
+  position: relative;
 }
-
-.barChart-tooltip-wrapper .recharts-tooltip-item-list {
+.dailyActivity .recharts-responsive-container {
+  margin-top: auto;
+}
+.dailyActivity .recharts-responsive-container .recharts-wrapper {
+  position: relative;
+}
+.dailyActivity .barChart-tooltip-wrapper .recharts-tooltip-item-list {
   display: grid;
   place-items: center;
+}
+
+.performance {
+  padding: 12px 5px 12px 5px;
+  min-width: 258px;
+  max-height: 263px;
+  background: #282D30;
+}
+
+.score {
+  padding: 12px 5px 12px 5px;
+  min-width: 258px;
+  max-height: 263px;
 }
 
 .session {
@@ -244,7 +265,7 @@ main {
   padding-inline: 0;
   background: #FF0000;
   padding-block: 30px 16px;
-  min-height: 258px;
+  min-width: 258px;
   position: relative;
 }
 .session-label {

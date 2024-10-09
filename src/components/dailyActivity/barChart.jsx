@@ -45,7 +45,6 @@ export default function DailyBarChart({activity}) {
 
     const legendWrapperStyle ={
         fontSize: "14px",
-        background:"purple"
     }
     const formatTooltip = (value, name)=> {
         const unit = name=="calories" ? "Kcal":"kg";
@@ -56,22 +55,16 @@ export default function DailyBarChart({activity}) {
         return legend;
     }
     return (
-        <ResponsiveContainer width="100%" height="100%">
+        <ResponsiveContainer width="100%" height={206}>
             <BarChart
-                width={700}
-                height={300}
+                width={702}
+                height={100}
                 data={activity.sessions}
-                margin={{
-                    top: 5,
-                    right: 0,
-                    left: 0,
-                    bottom: 5,
-                }}
                 barCategoryGap={'number'}
                 barGap={'8'}
             >
-                <CartesianGrid strokeDasharray="3 3"/>
-                <XAxis dataKey={getXAxisDays}/>
+                <CartesianGrid vertical={false} strokeDasharray="3 3"/>
+                <XAxis tickMargin={16} tick={{fontSize:"14px", fontWeight:"600", color:"#9B9EAC"}} tickLine={false} dataKey={getXAxisDays}/>
                 <YAxis yAxisId="kilogram" dataKey={'kilogram'} orientation={'right'} type="number"
                        domain={['dataMin - 3', 'dataMax + 3']}/>
                 <YAxis dataKey={'calories'} hide={true}/>

@@ -1,10 +1,19 @@
 .dailyActivity {
-  height: 200px;
+  height: 320px;
   grid-area: barchart;
-}
-.barChart-tooltip-wrapper{
-  .recharts-tooltip-item-list{
-    display: grid;
-    place-items: center;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  .recharts-responsive-container{
+    margin-top: auto;
+    .recharts-wrapper{
+      position: relative;
+    }
+  }
+  .barChart-tooltip-wrapper{
+    .recharts-tooltip-item-list{
+      display: grid;
+      place-items: center;
+    }
   }
 }
