@@ -1,4 +1,27 @@
 .score {
   padding: 12px 5px 12px 5px;
   max-height: 263px;
+  position: relative;
+  &-circle{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #000;
+    font-size: 16px;
+    height: 172px;
+    width: 172px;
+    box-shadow: 0px 0px 7px -6px grey;
+    background: white;
+    border-radius: 100%;
+    display: grid;
+    place-items: center;
+    &-text{
+      @include font-score-text();
+      &-percentage{
+        @include font-score-percentage();
+      }
+    }
+  }
 }

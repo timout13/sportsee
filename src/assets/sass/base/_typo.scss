@@ -91,3 +91,15 @@
   font-weight: 500;
   font-size: 14px;
 }
+
+@mixin font-score-percentage(){
+  color: $color-bg-black;
+  font-weight: 800;
+  font-size: 26px;
+}
+
+@mixin font-score-text(){
+  color: #74798C;
+  font-weight: 500;
+  font-size: 16px;
+}

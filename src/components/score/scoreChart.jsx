@@ -1,54 +1,45 @@
-import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer } from 'recharts';
+import { RadialBarChart, RadialBar, PolarAngleAxis, ResponsiveContainer } from 'recharts';
 
 const data = [
     {
-        subject: 'Math',
-        A: 120,
-        B: 110,
-        fullMark: 150,
-    },
-    {
-        subject: 'Chinese',
-        A: 98,
-        B: 130,
-        fullMark: 150,
-    },
-    {
-        subject: 'English',
-        A: 86,
-        B: 130,
-        fullMark: 150,
-    },
-    {
-        subject: 'Geography',
-        A: 99,
-        B: 100,
-        fullMark: 150,
-    },
-    {
-        subject: 'Physics',
-        A: 85,
-        B: 90,
-        fullMark: 150,
-    },
-    {
-        subject: 'History',
-        A: 65,
-        B: 85,
-        fullMark: 150,
+        name: 'Objectif',
+        uv: 45, // Pourcentage dynamique
+        fill: '#FF0000', // Couleur rouge pour la barre
     },
 ];
 
-export default function ScoreChart({performance}) {
+export default function ScoreChart() {
+    const percentage = data[0].uv; // Récupère le pourcentage dynamique
 
-        return (
+    return (
+        <>
             <ResponsiveContainer width="100%" height="100%">
-                <RadarChart cx="50%" cy="50%" outerRadius="80%" data={data}>
-                    <PolarGrid />
-                    <PolarAngleAxis dataKey="subject" />
-                    <PolarRadiusAxis />
-                    <Radar name="Mike" dataKey="A" stroke="#8884d8" fill="#8884d8" fillOpacity={0.6} />
-                </RadarChart>
+                <RadialBarChart
+                    cx="50%" cy="50%"
+                    innerRadius="80%" // Ajuste la taille du cercle interne
+                    outerRadius="100%" // Ajuste la taille de la barre
+                    startAngle={90} // Démarrage à 12h
+                    endAngle={450} // Rotation dans le sens des aiguilles d'une montre
+                    barSize={10}
+                    data={data}
+                >
+                    <PolarAngleAxis
+                        type="number"
+                        domain={[0, 100]} // Domain sur 100% pour bien indiquer l'objectif
+                        angleAxisId={0}
+                        tick={false} // Pas de graduation
+                    />
+                    <RadialBar
+                        minAngle={15} // Pour que la barre soit visible même avec des petites valeurs
+                        clockWise
+                        dataKey="uv"
+                        cornerRadius={10} // Bord arrondi
+                    />
+                </RadialBarChart>
             </ResponsiveContainer>
-        );
+            <div className="score-circle">
+                <p className="score-circle-text"><span className="score-circle-text-percentage">{percentage}%</span><br/>de votre objectif</p>
+            </div>
+        </>
+    );
 }
