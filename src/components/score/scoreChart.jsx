@@ -1,16 +1,14 @@
 import { RadialBarChart, RadialBar, PolarAngleAxis, ResponsiveContainer } from 'recharts';
 
-const data = [
-    {
-        name: 'Objectif',
-        uv: 45, // Pourcentage dynamique
-        fill: '#FF0000', // Couleur rouge pour la barre
-    },
-];
-
-export default function ScoreChart() {
-    const percentage = data[0].uv; // Récupère le pourcentage dynamique
-
+export default function ScoreChart({score}) {
+    const percentage = parseFloat(score)*100;
+    const data = [
+        {
+            name: 'percentage',
+            value: percentage,
+            fill: '#FF0000',
+        }
+    ];
     return (
         <>
             <ResponsiveContainer width="100%" height="100%">
@@ -27,12 +25,11 @@ export default function ScoreChart() {
                         type="number"
                         domain={[0, 100]} // Domain sur 100% pour bien indiquer l'objectif
                         angleAxisId={0}
-                        tick={false} // Pas de graduation
+                        tick={false}
                     />
                     <RadialBar
                         minAngle={15} // Pour que la barre soit visible même avec des petites valeurs
-                        clockWise
-                        dataKey="uv"
+                        dataKey="value"
                         cornerRadius={10} // Bord arrondi
                     />
                 </RadialBarChart>
