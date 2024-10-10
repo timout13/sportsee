@@ -1,7 +1,7 @@
 import { RadialBarChart, RadialBar, PolarAngleAxis, ResponsiveContainer } from 'recharts';
 
 export default function ScoreChart({score}) {
-    const percentage = parseFloat(score)*100;
+    const percentage = !isNaN(parseFloat(score)) ? parseFloat(score) * 100 : 0;
     const data = [
         {
             name: 'percentage',
@@ -29,7 +29,7 @@ export default function ScoreChart({score}) {
                     />
                     <RadialBar
                         minAngle={15} // Pour que la barre soit visible même avec des petites valeurs
-                        dataKey="value"
+                        dataKey="value" //! ERREUR SUR LA DATA
                         cornerRadius={10} // Bord arrondi
                     />
                 </RadialBarChart>
