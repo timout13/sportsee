@@ -107,16 +107,35 @@ main {
   gap: 30px;
   grid-template-areas: "barchart barchart barchart tracker" "barchart barchart barchart tracker" "linechart . . tracker";
 }
+@media (max-width: 1340px) {
+  .homepage-content {
+    grid-template-areas: "tracker tracker tracker" "barchart barchart barchart" "linechart . . ";
+  }
+}
 .homepage .keyNumbers {
   display: flex;
   flex-direction: column;
   gap: 39px;
   grid-area: tracker;
 }
+@media (max-width: 1340px) {
+  .homepage .keyNumbers {
+    flex-direction: row;
+    gap: 20px;
+  }
+}
 .homepage .keyNumbers-key {
   display: flex;
   gap: 30px;
   min-width: 260px;
+}
+@media (max-width: 1340px) {
+  .homepage .keyNumbers-key {
+    flex: 1;
+    gap: 15px;
+    min-width: min-content;
+    padding: 20px;
+  }
 }
 .homepage .keyNumbers-key-txt-value {
   color: #282D30;
@@ -227,6 +246,17 @@ main {
 .card--p-number {
   padding: 32px;
 }
+.card--small {
+  max-height: 263px;
+  height: 263px;
+  min-width: 258px;
+  width: 100%;
+}
+@media (max-width: 1200px) {
+  .card--small {
+    min-width: 230px;
+  }
+}
 
 .dailyActivity {
   height: 320px;
@@ -248,14 +278,11 @@ main {
 
 .performance {
   padding: 12px 5px 12px 5px;
-  min-width: 258px;
-  max-height: 263px;
   background: #282D30;
 }
 
 .score {
   padding: 12px 5px 12px 5px;
-  min-width: 258px;
   max-height: 263px;
 }
 
@@ -265,7 +292,6 @@ main {
   padding-inline: 0;
   background: #FF0000;
   padding-block: 30px 16px;
-  min-width: 258px;
   position: relative;
 }
 .session-label {
@@ -282,7 +308,7 @@ main {
 .section_py {
   padding-inline: 100px;
 }
-@media (max-width: 1023px) {
+@media (max-width: 1340px) {
   .section_py {
     padding-inline: 50px;
   }

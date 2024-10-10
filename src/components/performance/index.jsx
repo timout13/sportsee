@@ -12,7 +12,7 @@ function Performance() {
     }, [data]);
     return (
         <>
-            <div className="card performance">
+            <div className="card card--small performance">
                 <PerformanceRadarChart performance={performance} />
             </div>
         </>

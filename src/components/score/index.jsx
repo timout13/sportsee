@@ -12,7 +12,7 @@ function Score() {
     }, [data]);
     return (
         <>
-            <div className="card score">
+            <div className="card card--small score">
                 <ScoreChart performance={score} />
             </div>
         </>

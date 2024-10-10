@@ -1,7 +1,7 @@
 .section{
   &_py{
     padding-inline: 100px;
-    @include media-inferior($breakpoints-desktop){
+    @include media-inferior("1340px"){
       padding-inline: 50px;
     }
     @include media-inferior($breakpoints-s){

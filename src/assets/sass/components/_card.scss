@@ -9,4 +9,13 @@
   &--p-number{
     padding: 32px;
   }
+  &--small{
+    max-height: 263px;
+    height: 263px;
+    min-width: 258px;
+    width: 100%;
+    @include media-inferior("1200px"){
+      min-width: 230px;
+    }
+  }
 }

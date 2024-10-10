@@ -8,16 +8,32 @@
         "barchart barchart barchart tracker"
         "barchart barchart barchart tracker"
         "linechart . . tracker";
+    @include media-inferior("1340px"){
+      grid-template-areas:
+        "tracker tracker tracker"
+        "barchart barchart barchart"
+        "linechart . . ";
+    }
   }
   .keyNumbers{
     display: flex;
     flex-direction: column;
     gap: 39px;
     grid-area: tracker;
+    @include media-inferior("1340px"){
+      flex-direction: row;
+      gap: 20px;
+    }
     &-key{
       display: flex;
       gap: 30px;
       min-width: 260px;
+      @include media-inferior("1340px"){
+        flex: 1;
+        gap: 15px;
+        min-width: min-content;
+        padding: 20px;
+      }
       &-txt{
         &-value{
           @include font-key-tracker-label();

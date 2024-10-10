@@ -12,7 +12,7 @@ function Session() {
     }, [data]);
     return (
         <>
-            <div className="card session">
+            <div className="card card--small session">
                 <p className="session-label">Durée moyenne des sessions</p>
                 <SessionLineChart userSessions={userSessions} />
             </div>
