@@ -45,6 +45,8 @@ export default function DailyBarChart({activity}) {
 
     const legendWrapperStyle ={
         fontSize: "14px",
+        right: "24px",
+        top: "30px"
     }
     const formatTooltip = (value, name)=> {
         const unit = name=="calories" ? "Kcal":"kg";
@@ -57,7 +59,7 @@ export default function DailyBarChart({activity}) {
     return (
         <ResponsiveContainer width="100%" height={206}>
             <BarChart
-                width={702}
+                width="100%"
                 height={100}
                 data={activity.sessions}
                 barCategoryGap={'number'}
@@ -69,7 +71,7 @@ export default function DailyBarChart({activity}) {
                        domain={['dataMin - 3', 'dataMax + 3']}/>
                 <YAxis dataKey={'calories'} hide={true}/>
                 <Tooltip label={false} formatter={(value, name, props) => formatTooltip(value,name)} wrapperClassName={"barchart-tooltip-wrapper"} wrapperStyle={wrapperStyle}  itemStyle={itemStyle} contentStyle={contentStyle} labelStyle={labelStyle}/>
-                <Legend wrapperStyle={legendWrapperStyle} formatter={formatLegend} align={'right'} verticalAlign={'top'} iconType={'circle'}/>
+                <Legend className={"tst"} wrapperStyle={legendWrapperStyle} formatter={formatLegend} align={'right'} verticalAlign={'top'} iconType={'circle'}/>
                 <Bar dataKey="kilogram" radius={[3, 3, 0, 0]} barSize={7} fill="#282D30"
                      activeBar={<Rectangle/>} yAxisId="kilogram"/>
                 <LabelList dataKey="kilogram" position="top"/>

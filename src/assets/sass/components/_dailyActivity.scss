@@ -4,6 +4,31 @@
   display: flex;
   flex-direction: column;
   position: relative;
+  &-label{
+    @include font-dailyActivity-label();
+  }
+  .recharts{
+    &-wrapper{
+      position: static!important;
+    }
+  }
+  .recharts-legend-wrapper{
+    .recharts-default-legend{
+      display: flex;
+      justify-content: flex-end;
+      gap: 20px;
+
+    }
+    .recharts-legend-item{
+
+      .recharts-surface{
+        margin-right: 12px!important;
+      }
+      span{
+        @include font-dailyActivity-legend-label();
+      }
+    }
+  }
   .recharts-responsive-container{
     margin-top: auto;
     .recharts-wrapper{

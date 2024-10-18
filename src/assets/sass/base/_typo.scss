@@ -80,6 +80,19 @@
   font-size: 24px;
 }
 
+
+@mixin font-dailyActivity-legend-label(){
+  color: #74798C!important;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+@mixin font-dailyActivity-label(){
+  color: #20253A;
+  font-weight: 500;
+  font-size: 15px;
+}
+
 @mixin font-key-tracker-label(){
   color: $color-bg-black;
   font-weight: 800;

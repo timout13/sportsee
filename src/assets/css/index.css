@@ -267,6 +267,27 @@ main {
   flex-direction: column;
   position: relative;
 }
+.dailyActivity-label {
+  color: #20253A;
+  font-weight: 500;
+  font-size: 15px;
+}
+.dailyActivity .recharts-wrapper {
+  position: static !important;
+}
+.dailyActivity .recharts-legend-wrapper .recharts-default-legend {
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+}
+.dailyActivity .recharts-legend-wrapper .recharts-legend-item .recharts-surface {
+  margin-right: 12px !important;
+}
+.dailyActivity .recharts-legend-wrapper .recharts-legend-item span {
+  color: #74798C !important;
+  font-weight: 500;
+  font-size: 14px;
+}
 .dailyActivity .recharts-responsive-container {
   margin-top: auto;
 }
