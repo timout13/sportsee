@@ -7,12 +7,14 @@
     grid-template-areas:
         "barchart barchart barchart tracker"
         "barchart barchart barchart tracker"
-        "linechart . . tracker";
+        "linechart performance score tracker";
     @include media-inferior("1340px"){
       grid-template-areas:
         "tracker tracker tracker"
         "barchart barchart barchart"
-        "linechart . . ";
+        "linechart performance score";
+      grid-template-columns: 1fr 1fr auto;
+      gap: 20px;
     }
   }
   .keyNumbers{

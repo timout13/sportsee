@@ -13,7 +13,14 @@ function Performance() {
     return (
         <>
             <div className="card card--small performance">
-                <PerformanceRadarChart performance={performance} />
+                {isLoading && <p>Chargement...</p>}
+
+                {/* Si la performance n'a pas de données, afficher le message d'attente */}
+                {!isLoading && (!performance || !performance.data || performance.data.length === 0) ? (
+                    <p>Aucune performance disponible pour le moment</p>
+                ) : (
+                    <PerformanceRadarChart performance={performance} />
+                )}
             </div>
         </>
     );

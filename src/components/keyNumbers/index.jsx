@@ -12,7 +12,6 @@ function KeyNumbers() {
             setKeyNumbers(entries)
         }
     }, [data]);
-        console.log(data)
     return (
         <div className="keyNumbers">
                 {keyNumbers && keyNumbers.map((keyNumber,i)=> <KeyContent data={keyNumber} key={i} /> )}

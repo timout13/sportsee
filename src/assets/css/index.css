@@ -105,11 +105,13 @@ main {
 .homepage-content {
   display: grid;
   gap: 30px;
-  grid-template-areas: "barchart barchart barchart tracker" "barchart barchart barchart tracker" "linechart . . tracker";
+  grid-template-areas: "barchart barchart barchart tracker" "barchart barchart barchart tracker" "linechart performance score tracker";
 }
 @media (max-width: 1340px) {
   .homepage-content {
-    grid-template-areas: "tracker tracker tracker" "barchart barchart barchart" "linechart . . ";
+    grid-template-areas: "tracker tracker tracker" "barchart barchart barchart" "linechart performance score";
+    grid-template-columns: 1fr 1fr auto;
+    gap: 20px;
   }
 }
 .homepage .keyNumbers {
@@ -279,12 +281,19 @@ main {
 .performance {
   padding: 12px 5px 12px 5px;
   background: #282D30;
+  grid-area: performance;
 }
 
 .score {
   padding: 12px 5px 12px 5px;
   max-height: 263px;
   position: relative;
+  grid-area: score;
+}
+@media (max-width: 1340px) {
+  .score {
+    width: 240px;
+  }
 }
 .score-circle {
   position: absolute;

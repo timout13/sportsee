@@ -62,20 +62,27 @@ export default function SessionLineChart({userSessions}) {
     const [sessions, setSessions] = useState([]);
     const activeDotStyle = { stroke: 'rgba(255, 255, 255, 0.1983)', fill:'white', strokeWidth: 5, r: 4 };
     useEffect(() => {
-        setSessions(userSessions);
+        if(userSessions && userSessions.sessions){
+            const sessionsLength = getSession(userSessions.sessions);
+            sessionsLength.unshift({ day: "", value: sessionsLength[0].value });
+            sessionsLength.push({ day: "", value: sessionsLength[sessionsLength.length - 1].value });
+            setSessions(sessionsLength);
+        }
     }, [userSessions]);
     function getXAxisDays() {
         return ["","L", "M", "M", "J", "V", "S", "D",""];
     }
+            console.log(sessions)
     function getSession(sessions){
-        return sessions.map(session => session.sessionLength)
+        const days = getXAxisDays();
+        return sessions.map((session,index) => {
+           return {day: days[index + 1],value: session.sessionLength}
+        })
     }
-    console.log(getSession(data));
         return (
             <ResponsiveContainer width="100%" height="100%">
                 <LineChart
-
-                    data={data}
+                    data={sessions}
                     margin={{
                         top: 30,
                         right: 0,
@@ -83,11 +90,10 @@ export default function SessionLineChart({userSessions}) {
                         bottom: 5,
                     }}
                 >
-                    <XAxis dataKey={getXAxisDays} tickLine={false} axisLine={false} tick={{fill: 'rgba(255, 255, 255, 50%)',stroke: 'rgba(255, 255, 255, 50%)', strokeWidth: 1}} />
+                    <XAxis dataKey="day" tickLine={false} axisLine={false} tick={{fill: 'rgba(255, 255, 255, 50%)',stroke: 'rgba(255, 255, 255, 50%)', strokeWidth: 1}} />
                     <YAxis  hide={true}/>
                     <Tooltip />
-                    <Line type="monotone" dot={false} dataKey="pv" stroke="white" activeDot={activeDotStyle} />
-                    <Line type="monotone" dot={false} dataKey="uv" stroke="white" strokeWidth={2} activeDot={activeDotStyle} />
+                    <Line type="monotone" dot={false} dataKey="value" stroke="white" strokeWidth={2} activeDot={activeDotStyle} />
                 </LineChart>
             </ResponsiveContainer>
         );
