@@ -79,8 +79,20 @@
   font-weight: 500;
   font-size: 24px;
 }
+@mixin font-homepage-title(){
+  color: #000000;
+  font-weight: 500;
+  font-size: 48px;
+}
+@mixin font-homepage-title--highlight(){
+  color: #FF0101;
+}
 
-
+@mixin font-homepage-subtitle(){
+  color: #000000;
+  font-weight: 400;
+  font-size: 18px;
+}
 @mixin font-dailyActivity-legend-label(){
   color: #74798C!important;
   font-weight: 500;

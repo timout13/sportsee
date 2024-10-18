@@ -1,6 +1,17 @@
 .homepage {
   margin-block: 50px;
   flex: 1;
+  &-title{
+    @include font-homepage-title();
+    margin-bottom: 30px;
+    &--highlight{
+      @include font-homepage-title--highlight();
+    }
+  }
+  &-subtitle{
+    @include font-homepage-subtitle();
+    margin-bottom: 77px;
+  }
   &-content{
     display: grid;
     gap: 30px;

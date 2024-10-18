@@ -11,8 +11,8 @@ function HomeHeader() {
     }, [data]);
     return (
         <>
-            <h1>Bonjour <span>{userData?.firstName}</span></h1>
-            <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
+            <h1 className="homepage-title">Bonjour <span className="homepage-title--highlight">{userData?.firstName}</span></h1>
+            <p className="homepage-subtitle">Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
         </>
 
     )
