@@ -48,14 +48,22 @@ export default function DailyBarChart({activity}) {
         right: "24px",
         top: "30px"
     }
-    const formatTooltip = (value, name)=> {
-        const unit = name=="calories" ? "Kcal":"kg";
-        return [`${value} ${unit}`];
-    }
+
     const formatLegend = (value, entry, index) => {
          const legend = value == "calories" ? "Calories brûlées (kCal)" : "Poids (kg)";
         return legend;
     }
+    const CustomTooltip = ({ active, payload }) => {
+        if (active && payload && payload.length) {
+            return (
+                <div className='barChart-tooltip-wrapper'>
+                    <p className='barChart-tooltip-wrapper-label'>{`${payload[0].value} kg`}</p>
+                    <p className='barChart-tooltip-wrapper-label'>{`${payload[1].value} Kcal`}</p>
+                </div>
+            );
+        }
+        return null;
+    };
     return (
         <ResponsiveContainer width="100%" height={206}>
             <BarChart
@@ -70,7 +78,7 @@ export default function DailyBarChart({activity}) {
                 <YAxis yAxisId="kilogram" dataKey={'kilogram'} orientation={'right'} type="number"
                        domain={['dataMin - 3', 'dataMax + 3']}/>
                 <YAxis dataKey={'calories'} hide={true}/>
-                <Tooltip label={false} formatter={(value, name, props) => formatTooltip(value,name)} wrapperClassName={"barchart-tooltip-wrapper"} wrapperStyle={wrapperStyle}  itemStyle={itemStyle} contentStyle={contentStyle} labelStyle={labelStyle}/>
+                <Tooltip content={CustomTooltip} />
                 <Legend className={"tst"} wrapperStyle={legendWrapperStyle} formatter={formatLegend} align={'right'} verticalAlign={'top'} iconType={'circle'}/>
                 <Bar dataKey="kilogram" radius={[3, 3, 0, 0]} barSize={7} fill="#282D30"
                      activeBar={<Rectangle/>} yAxisId="kilogram"/>

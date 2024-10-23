@@ -319,9 +319,20 @@ main {
 .dailyActivity .recharts-responsive-container .recharts-wrapper {
   position: relative;
 }
-.dailyActivity .barChart-tooltip-wrapper .recharts-tooltip-item-list {
-  display: grid;
-  place-items: center;
+.dailyActivity .barChart-tooltip-wrapper {
+  background: #E60000;
+  padding-block: 4px;
+  padding-inline: 7px;
+  height: 63px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.dailyActivity .barChart-tooltip-wrapper-label {
+  color: white;
+  font-weight: 500;
+  font-size: 7px;
 }
 
 .performance {
@@ -392,6 +403,11 @@ main {
   padding-inline: 7px;
   padding-block: 5px;
   background: white;
+}
+.session-tooltip-value {
+  color: #000000;
+  font-weight: 500;
+  font-size: 8px;
 }
 .session .recharts-responsive-container {
   margin-left: -7.5%;

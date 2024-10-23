@@ -36,9 +36,16 @@
     }
   }
   .barChart-tooltip-wrapper{
-    .recharts-tooltip-item-list{
-      display: grid;
-      place-items: center;
+    background: #E60000;
+    padding-block: 4px;
+    padding-inline: 7px;
+    height: 63px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    &-label{
+      @include font-dailyActivity-barChart-tooltip-label();
     }
   }
 }

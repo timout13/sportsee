@@ -105,6 +105,12 @@
   font-size: 15px;
 }
 
+@mixin font-dailyActivity-barChart-tooltip-label(){
+  color: white;
+  font-weight: 500;
+  font-size: 7px;
+}
+
 @mixin font-key-tracker-label(){
   color: $color-bg-black;
   font-weight: 800;
