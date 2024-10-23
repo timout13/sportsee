@@ -128,3 +128,9 @@
   font-weight: 500;
   font-size: 16px;
 }
+
+@mixin font-session-tooltip-value(){
+  color: #000000;
+  font-weight: 500;
+  font-size: 8px;
+}

@@ -28,6 +28,7 @@ body {
 
 #root {
   width: 100%;
+  min-height: 100vh;
 }
 
 h1 {
@@ -37,7 +38,8 @@ h1 {
 
 main {
   display: flex;
-  max-height: 500px;
+  min-height: 100vh;
+  padding-left: 116px;
 }
 
 /* * PAGES * */
@@ -52,6 +54,8 @@ main {
   padding-inline: 28px 91px;
   gap: 150px;
   box-shadow: 0px 5px 4px 0px hwb(0deg 0% 100%/25%);
+  position: relative;
+  z-index: 102;
 }
 .header_logo {
   height: 61px;
@@ -78,14 +82,18 @@ main {
 .sidebar {
   background: black;
   display: flex;
-  height: calc(100dvh - 91px);
   flex-direction: column;
   align-items: center;
   padding-inline: 26px;
-  justify-content: space-evenly;
+  justify-content: center;
+  height: 100dvh;
   /*justify-content: space-between;
   padding-block: 256px 59px;
   gap: 164px;*/
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 101;
 }
 .sidebar-menu {
   display: flex;
@@ -96,6 +104,8 @@ main {
   color: white;
   transform: rotate(180deg);
   writing-mode: vertical-lr;
+  position: absolute;
+  bottom: 30px;
 }
 
 .homepage {
@@ -365,6 +375,8 @@ main {
   background: #FF0000;
   padding-block: 30px 16px;
   position: relative;
+  overflow: hidden;
+  padding: 0;
 }
 .session-label {
   position: absolute;
@@ -375,6 +387,14 @@ main {
   top: 30px;
   left: 30px;
   z-index: 2;
+}
+.session-tooltip {
+  padding-inline: 7px;
+  padding-block: 5px;
+  background: white;
+}
+.session .recharts-responsive-container {
+  margin-left: -7.5%;
 }
 
 .section_py {

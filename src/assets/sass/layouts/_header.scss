@@ -8,6 +8,8 @@
   padding-inline: 28px 91px;
   gap: 150px;
   box-shadow: 0px 5px 4px 0px hwb(0deg 0% 100% / 25%);
+  position: relative;
+  z-index: 102;
   &_logo{
     height: 61px;
   }
