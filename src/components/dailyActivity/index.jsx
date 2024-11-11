@@ -3,9 +3,9 @@ import {useFetch} from "../../utils/hooks/index.jsx";
 import DailyBarChart from "./barChart.jsx";
 import SessionLineChart from "../session/sessionLineChart.jsx";
 
-function DailyActivity() {
+function DailyActivity({idUser}) {
     const [userData, setUserData] = useState({});
-    const url = `${__API_URL__}/user/12/activity`;
+    const url = `${__API_URL__}/user/${idUser}/activity`;
     const {data, isLoading, error} = useFetch(url);
 
     useEffect(() => {

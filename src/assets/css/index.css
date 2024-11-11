@@ -179,6 +179,7 @@ main {
   display: flex;
   flex-direction: column;
   gap: 139px;
+  width: 100%;
 }
 @media (max-width: 576px) {
   .error_404 {
@@ -189,7 +190,7 @@ main {
 .error_404_title {
   font-size: 288px;
   font-weight: 800;
-  color: #FF6060;
+  color: black;
   text-align: center;
   line-height: 218px;
 }
@@ -207,7 +208,7 @@ main {
 .error_404_subtitle {
   font-size: 36px;
   font-weight: 500;
-  color: #FF6060;
+  color: black;
   text-align: center;
   padding-inline: 30px;
 }

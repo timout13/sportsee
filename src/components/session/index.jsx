@@ -3,9 +3,9 @@ import {useFetch} from "../../utils/hooks/index.jsx";
 import SessionLineChart from "./sessionLineChart.jsx";
 import PerformanceRadarChart from "../performance/perfomanceRadarChart.jsx";
 
-function Session() {
+function Session({idUser}) {
     const [userSessions, setUserSessions] = useState({});
-    const url = `${__API_URL__}/user/12/average-sessions`;
+    const url = `${__API_URL__}/user/${idUser}/average-sessions`;
     const {data, isLoading, error} = useFetch(url);
 
     useEffect(() => {

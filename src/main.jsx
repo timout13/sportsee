@@ -14,7 +14,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
             <main>
                 <Sidebar/>
                     <Routes>
-                        <Route path="/" element={<Home/>}></Route>
+                        <Route path="/user/:idUser" element={<Home/>}></Route>
                         <Route path="/*" element={<Error404/>}></Route>
                     </Routes>
             </main>

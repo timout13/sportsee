@@ -5,7 +5,7 @@
 @mixin font-404-title(){
   font-size: 288px;
   font-weight: 800;
-  color: $color-primary;
+  color: black;
   text-align: center;
   line-height: 218px;
   @include media-inferior($breakpoints-desktop){
@@ -19,7 +19,7 @@
 @mixin font-404-subtitle(){
   font-size: 36px;
   font-weight: 500;
-  color: $color-primary;
+  color: black;
   text-align: center;
   padding-inline: 30px;
   @include media-inferior($breakpoints-desktop){

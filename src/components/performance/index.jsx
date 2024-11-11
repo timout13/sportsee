@@ -2,9 +2,9 @@ import {useEffect, useState} from "react";
 import {useFetch} from "../../utils/hooks/index.jsx";
 import PerformanceRadarChart from "./perfomanceRadarChart.jsx";
 
-function Performance() {
+function Performance({idUser}) {
     const [performance, setPerformance] = useState({});
-    const url = `${__API_URL__}/user/12/performance`;
+    const url = `${__API_URL__}/user/${idUser}/performance`;
     const {data, isLoading, error} = useFetch(url);
 
     useEffect(() => {

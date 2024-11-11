@@ -1,9 +1,9 @@
 import {useEffect, useState} from 'react';
 import {useFetch} from "../../utils/hooks/index.jsx";
 
-function HomeHeader() {
+function HomeHeader({idUser}) {
     const [userData, setUserData] = useState({});
-    const url = `${__API_URL__}/user/12`;
+    const url = `${__API_URL__}/user/${idUser}`;
     const {data, isLoading, error} = useFetch(url);
 
     useEffect(() => {
