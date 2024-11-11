@@ -90,5 +90,3 @@ export default function DailyBarChart({activity}) {
         </ResponsiveContainer>
     );
 }
-// Légende trop petite par rapport aux calories ==> Regarder param scale
-// Forme des bars

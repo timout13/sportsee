@@ -2,4 +2,28 @@
   padding: 12px 5px 12px 5px;
   background: $color-bg-black;
   grid-area: performance;
+  &--nodata{
+    padding: 24px 30px;
+    display: flex;
+    flex-direction: column;
+    min-width: 348px;
+    .session-label{
+      position: static;
+      width: auto;
+    }
+    .error{
+      margin-top: auto;
+      @include font-session-error();
+    }
+  }
+  &--loading{
+    padding: 24px 30px;
+    display: flex;
+    flex-direction: column;
+    min-width: 348px;
+    .loading{
+      margin-top: auto;
+      @include font-session-error();
+    }
+  }
 }

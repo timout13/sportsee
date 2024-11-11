@@ -33,7 +33,7 @@ export default function SessionLineChart({userSessions}) {
     };
 
     const CustomCursor = ({ points }) => {
-        return <Rectangle fill='#000000' opacity={0.2} x={points[0].x} width={500} height={300} />;
+        return <Rectangle fill='#000000' opacity={0.2} x={points[0].x} width={1000} height={300} />;
     };
         return (
             <ResponsiveContainer width="115%" height="100%" >

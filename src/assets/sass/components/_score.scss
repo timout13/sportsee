@@ -3,9 +3,7 @@
   max-height: 263px;
   position: relative;
   grid-area: score;
-  @include media-inferior("1340px"){
-    width: 240px;
-  }
+
   &-circle{
     position: absolute;
     top: 50%;

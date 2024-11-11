@@ -104,6 +104,10 @@
   font-weight: 500;
   font-size: 15px;
 }
+@mixin font-dailyActivity-error(){
+  color: #000000;
+  font-weight: 500;
+}
 
 @mixin font-dailyActivity-barChart-tooltip-label(){
   color: white;
@@ -139,4 +143,10 @@
   color: #000000;
   font-weight: 500;
   font-size: 8px;
+}
+
+@mixin font-session-error(){
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 14px;
 }

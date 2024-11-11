@@ -23,22 +23,3 @@ export function useFetch(url) {
     }, [url]);
     return {isLoading, data, error};
 }
-
-/* *
-* Sur page l'url d'accueil j'envoie le userId
-* Création du hook useFormattedData pour récupérer toutes les données de l'utilisateur formatées
-* useFormattedData =>
-*   Si DEV_MODE == false :
-*       useFetch(user)
-*       useFetch(activity)
-*       useFetch(average-sessions)
-*       useFetch(performance)
-*       intégrer les réponses des useFetch dans les class
-*       Retourner les class
-*   Fin Si;
-* * */
-
-/* *
-* un appel à la bdd pour chaque composant
-*
-* */

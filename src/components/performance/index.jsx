@@ -10,14 +10,16 @@ function Performance() {
     useEffect(() => {
         data && setPerformance(data);
     }, [data]);
+    const boolData = !isLoading && (!performance || !performance.data || performance.data.length === 0);
+    const divClassName = `card card--small performance ${boolData ? "performance--nodata":""} ${isLoading ? "performance--loading":""}`;
     return (
         <>
-            <div className="card card--small performance">
-                {isLoading && <p>Chargement...</p>}
+            <div className={divClassName}>
+                {isLoading && <p className="loading">Chargement...</p>}
 
-                {/* Si la performance n'a pas de données, afficher le message d'attente */}
-                {!isLoading && (!performance || !performance.data || performance.data.length === 0) ? (
-                    <p>Aucune performance disponible pour le moment</p>
+                {/* If there is no data on performance yet, display a waiting message. */}
+                {boolData ? (
+                    <p className="error">Aucune performance disponible pour le moment.</p>
                 ) : (
                     <PerformanceRadarChart performance={performance} />
                 )}

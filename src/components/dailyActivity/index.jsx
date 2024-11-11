@@ -1,6 +1,7 @@
 import {useEffect, useState} from "react";
 import {useFetch} from "../../utils/hooks/index.jsx";
 import DailyBarChart from "./barChart.jsx";
+import SessionLineChart from "../session/sessionLineChart.jsx";
 
 function DailyActivity() {
     const [userData, setUserData] = useState({});
@@ -10,11 +11,20 @@ function DailyActivity() {
     useEffect(() => {
         data && setUserData(data);
     }, [data]);
+    const boolData = !isLoading && (!userData ||  Object.keys(userData).length === 0);
+    const divClassName = `card dailyActivity ${boolData ? "dailyActivity--nodata":""} ${isLoading ? "dailyActivity--loading":""}`;
     return (
         <>
-            <div className="card dailyActivity">
+            <div className={divClassName}>
                 <p className="dailyActivity-label">Activité quotidienne</p>
-                <DailyBarChart activity={userData} />
+                {isLoading && <p className="loading">Chargement...</p>}
+
+                {/* If there is no data on userSessions yet, display a waiting message. */}
+                {boolData ? (
+                    <p className="error">Aucune donnée disponible pour le moment.</p>
+                ) : (
+                    <DailyBarChart activity={userData} />
+                )}
             </div>
         </>
     );

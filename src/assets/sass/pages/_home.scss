@@ -19,12 +19,13 @@
         "barchart barchart barchart tracker"
         "barchart barchart barchart tracker"
         "linechart performance score tracker";
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     @include media-inferior("1340px"){
       grid-template-areas:
         "tracker tracker tracker"
         "barchart barchart barchart"
         "linechart performance score";
-      grid-template-columns: 1fr 1fr auto;
+      grid-template-columns: 1fr 1fr 1fr auto;
       gap: 20px;
     }
   }

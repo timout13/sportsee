@@ -4,6 +4,22 @@
   display: flex;
   flex-direction: column;
   position: relative;
+  &--nodata{
+    .error{
+      margin: auto;
+      @include font-dailyActivity-error();
+    }
+  }
+  &--loading{
+    padding: 24px 30px;
+    display: flex;
+    flex-direction: column;
+    min-width: 348px;
+    .loading{
+      margin: auto;
+      @include font-dailyActivity-error();
+    }
+  }
   &-label{
     @include font-dailyActivity-label();
   }
