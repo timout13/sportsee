@@ -2,10 +2,13 @@
   &_py{
     padding-inline: 100px;
     @include media-inferior("1340px"){
-      padding-inline: 50px;
+      padding-inline: 30px;
     }
     @include media-inferior($breakpoints-s){
       padding-inline: 20px;
+    }
+    @include media-betwteen("1340px","1390px"){
+      padding-inline: 50px;
     }
   }
 }

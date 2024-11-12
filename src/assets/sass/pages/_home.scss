@@ -1,6 +1,7 @@
 .homepage {
   margin-block: 50px;
   flex: 1;
+
   &-title{
     @include font-homepage-title();
     margin-bottom: 30px;
@@ -20,6 +21,10 @@
         "barchart barchart barchart tracker"
         "linechart performance score tracker";
     grid-template-columns: 1fr 1fr 1fr 1fr;
+    max-width: 1500px;
+    @include media-betwteen("1340px","1390px"){
+      grid-template-columns: 1fr 1fr 1fr 250px;
+    }
     @include media-inferior("1340px"){
       grid-template-areas:
         "tracker tracker tracker"
@@ -47,6 +52,9 @@
         gap: 15px;
         min-width: min-content;
         padding: 20px;
+      }
+      @include media-betwteen("1340px","1390px"){
+        min-width: 250px;
       }
       &-txt{
         &-value{

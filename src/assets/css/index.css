@@ -132,6 +132,12 @@ main {
   gap: 30px;
   grid-template-areas: "barchart barchart barchart tracker" "barchart barchart barchart tracker" "linechart performance score tracker";
   grid-template-columns: 1fr 1fr 1fr 1fr;
+  max-width: 1500px;
+}
+@media (min-width: 1340px) and (max-width: 1390px) {
+  .homepage-content {
+    grid-template-columns: 1fr 1fr 1fr 250px;
+  }
 }
 @media (max-width: 1340px) {
   .homepage-content {
@@ -163,6 +169,11 @@ main {
     gap: 15px;
     min-width: min-content;
     padding: 20px;
+  }
+}
+@media (min-width: 1340px) and (max-width: 1390px) {
+  .homepage .keyNumbers-key {
+    min-width: 250px;
   }
 }
 .homepage .keyNumbers-key-txt-value {
@@ -485,12 +496,17 @@ main {
 }
 @media (max-width: 1340px) {
   .section_py {
-    padding-inline: 50px;
+    padding-inline: 30px;
   }
 }
 @media (max-width: 576px) {
   .section_py {
     padding-inline: 20px;
+  }
+}
+@media (min-width: 1340px) and (max-width: 1390px) {
+  .section_py {
+    padding-inline: 50px;
   }
 }
 
