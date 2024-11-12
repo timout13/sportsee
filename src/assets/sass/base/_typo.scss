@@ -113,6 +113,9 @@
   color: white;
   font-weight: 500;
   font-size: 7px;
+  @include media-superior("1440px"){
+    font-size: 14px;
+  }
 }
 
 @mixin font-key-tracker-label(){
@@ -143,6 +146,9 @@
   color: #000000;
   font-weight: 500;
   font-size: 8px;
+  @include media-superior("1440px"){
+    font-size: 14px;
+  }
 }
 
 @mixin font-session-error(){

@@ -7,7 +7,7 @@
     @include media-inferior($breakpoints-s){
       padding-inline: 20px;
     }
-    @include media-betwteen("1340px","1390px"){
+    @include media-betwteen("1340px","1460px"){
       padding-inline: 50px;
     }
   }
