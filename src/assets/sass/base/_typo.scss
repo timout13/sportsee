@@ -44,35 +44,9 @@
   }
 }
 // Homepage
-@mixin font-homepage-hero(){
-  font-size: clamp(24px, 2vw + 1rem, 48px);
-  color: white;
-  font-weight: 800;
-  text-align: center;
-  @include media-inferior($breakpoints-md){
-    text-align: left;
-    text-wrap: balance;
-  }
-}
-@mixin font-location-title(){
-  font-size: 18px;
-  color: white;
-  font-weight: 800;
-  @include media-inferior($breakpoints-md){
-    text-align: left;
-    text-wrap: balance;
-  }
-}
-/* * COMPONENTS * */
 
-@mixin font-tag(){
-  font-size: 14px;
-  color: white;
-  font-weight: 700;
-  @include media-inferior($breakpoints-s){
-    font-size: 10px;
-  }
-}
+
+/* * COMPONENTS * */
 
 @mixin font-header(){
   color: #ffffff;

@@ -13,8 +13,9 @@ import {
 } from 'recharts';
 
 export default function DailyBarChart({activity}) {
-    function getXAxisDays() {
-        return [1, 2, 3, 4, 5, 6, 7];
+
+    function getXAxisDays(activity) {
+        return activity.sessions.map(session=> new Date(session.day).getDate());
     }
     const wrapperStyle = {
         background: '#E60000',
@@ -74,18 +75,17 @@ export default function DailyBarChart({activity}) {
                 barGap={'8'}
             >
                 <CartesianGrid vertical={false} strokeDasharray="3 3"/>
-                <XAxis tickMargin={16} tick={{fontSize:"14px", fontWeight:"600", color:"#9B9EAC"}} tickLine={false} dataKey={getXAxisDays}/>
+                <XAxis tickMargin={16} tick={{fontSize:"14px", fontWeight:"600", color:"#9B9EAC"}} tickLine={false} dataKey={()=>getXAxisDays(activity)}/>
                 <YAxis yAxisId="kilogram" dataKey={'kilogram'} orientation={'right'} type="number"
                        domain={['dataMin - 3', 'dataMax + 3']}/>
                 <YAxis dataKey={'calories'} hide={true}/>
                 <Tooltip content={CustomTooltip} />
-                <Legend className={"tst"} wrapperStyle={legendWrapperStyle} formatter={formatLegend} align={'right'} verticalAlign={'top'} iconType={'circle'}/>
+                <Legend wrapperStyle={legendWrapperStyle} formatter={formatLegend} align={'right'} verticalAlign={'top'} iconType={'circle'}/>
                 <Bar dataKey="kilogram" radius={[3, 3, 0, 0]} barSize={7} fill="#282D30"
                      activeBar={<Rectangle/>} yAxisId="kilogram"/>
                 <LabelList dataKey="kilogram" position="top"/>
                 <Bar dataKey="calories" radius={[3, 3, 0, 0]} barSize={7} fill="#E60000"
                      activeBar={<Rectangle/>}/>
-
             </BarChart>
         </ResponsiveContainer>
     );

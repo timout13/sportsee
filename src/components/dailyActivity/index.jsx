@@ -12,7 +12,7 @@ function DailyActivity({idUser}) {
         data && setUserData(data);
     }, [data]);
     const boolData = !isLoading && (!userData ||  Object.keys(userData).length === 0);
-    const divClassName = `card dailyActivity ${boolData ? "dailyActivity--nodata":""} ${isLoading ? "dailyActivity--loading":""}`;
+    const divClassName = `card dailyActivity ${boolData ? "dailyActivity--nodata" : ""} ${isLoading ? "dailyActivity--loading" : ""}`;
     return (
         <>
             <div className={divClassName}>

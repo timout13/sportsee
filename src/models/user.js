@@ -3,12 +3,12 @@ import {USER_MAIN_DATA,
     USER_AVERAGE_SESSIONS,
     USER_PERFORMANCE} from "../../mock/data.js";
 class User {
-    constructor({ id, userInfos, todayScore, keyData }) {
+    constructor({ id, userInfos, todayScore, score, keyData }) {
         this.id = id;
         this.firstName = userInfos.firstName;
         this.lastName = userInfos.lastName;
         this.age = userInfos.age;
-        this.todayScore = todayScore;
+        this.todayScore = todayScore ? todayScore :score;
         this.keyData = keyData;
     }
 }
